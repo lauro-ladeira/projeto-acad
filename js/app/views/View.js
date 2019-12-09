@@ -17,21 +17,18 @@ class View {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1.</th>
-                    <td>${registro.carga} kg</td>
-                    <td>${registro.reps} reps</td>
-                </tr>
-                <tr>
-                    <th scope="row">2.</th>
-                    <td>${registro.carga} kg</td>
-                    <td>${registro.reps} reps</td>
-                </tr>
-                <tr>
-                    <th scope="row">3.</th>
-                    <td>${registro.carga} kg</td>
-                    <td>${registro.reps} reps</td>
-                </tr>
+                ${(function() {
+                    let tableRows = "";
+                    for(let i = 1; i <= registro.series; i++) {
+                        tableRows += `
+                        <tr>
+                            <th scope="row">${i}.</th>
+                            <td>${registro.carga} kg</td>
+                            <td>${registro.reps} reps</td>
+                        </tr>`
+                    }
+                    return tableRows;
+                })() }
             </tbody>
         </table>`;
         this._element.appendChild(div);
