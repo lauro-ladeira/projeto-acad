@@ -19,18 +19,18 @@ class View {
             <tbody>
                 <tr>
                     <th scope="row">1.</th>
-                    <td>8 kg</td>
-                    <td>12 reps</td>
+                    <td>${registro.carga} kg</td>
+                    <td>${registro.reps} reps</td>
                 </tr>
                 <tr>
                     <th scope="row">2.</th>
-                    <td>8 kg</td>
-                    <td>12 reps</td>
+                    <td>${registro.carga} kg</td>
+                    <td>${registro.reps} reps</td>
                 </tr>
                 <tr>
                     <th scope="row">3.</th>
-                    <td>8 kg</td>
-                    <td>12 reps</td>
+                    <td>${registro.carga} kg</td>
+                    <td>${registro.reps} reps</td>
                 </tr>
             </tbody>
         </table>`;
