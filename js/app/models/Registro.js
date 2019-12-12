@@ -7,6 +7,11 @@ class Registro {
         this._reps = reps;
         this._carga = carga;
         this._id = id;
+        this._arrCargas = [];
+
+        for(let i = 0; i < this._series; i++) {
+            this._arrCargas.push(parseInt(this._carga));
+        }
         Object.freeze(this); //serve p/lidar com as atribuições aos underline ex. obj._age = 23;
     }
 
@@ -30,4 +35,7 @@ class Registro {
         return this._id;
     }
 
+    get arrCargas() {
+        return this._arrCargas;
+    }
 }
