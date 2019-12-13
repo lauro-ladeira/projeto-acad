@@ -63,6 +63,14 @@ th {
     margin: 0 .5rem 1rem 0;
 }
 
+.close {
+    color: #fff;
+}
+
+.close:not(:disabled):not(.disabled):focus, .close:not(:disabled):not(.disabled):hover {
+    color: #fff;
+}
+
 /* mobile */
 @media(max-width: 768px){
     .form-container {
