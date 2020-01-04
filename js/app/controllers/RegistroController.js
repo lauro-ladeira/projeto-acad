@@ -10,6 +10,7 @@ class RegistroController {
         
         this._listaRegistros = new ListaRegistros();
         this._registrosView = new View($('#registros-view'));
+        this._validacaoHelper = new validacaoHelper();
 
        
     }
@@ -17,6 +18,20 @@ class RegistroController {
     adiciona(event) {
 
         event.preventDefault();
+
+        //isso aqui ta validando o formulario
+        this._validacaoHelper.validaFormulario(
+            this._inputExercicio.value,
+            this._inputSeries.value,
+            this._inputReps.value, 
+            this._inputCarga.value
+        )
+        //aqui vc coloca o span
+            
+
+        //esse zerar mensagem zera o array com as msg de erro
+        this._validacaoHelper.zeraMensagemErro();
+
         const registro = this._criaRegistro();
 
         this._listaRegistros.adiciona(registro);
