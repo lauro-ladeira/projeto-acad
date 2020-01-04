@@ -8,7 +8,7 @@ class Registro {
         this._cargas = [];
         this._id = id;
 
-        for(let i = 0; i < this._series; i++) {
+        for (let i = 0; i < this._series; i++) {
             this._cargas.push(parseInt(carga));
         }
         Object.freeze(this); //serve p/lidar com as atribuições aos underline ex. obj._age = 23;

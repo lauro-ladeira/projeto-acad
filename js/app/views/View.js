@@ -1,12 +1,12 @@
 
 class View {
 
-    constructor(element){
+    constructor(element) {
         this._element = element;
     }
-    
+
     update(registro) {
-        
+
         const div = document.createElement('div');
 
         div.innerHTML = `            
@@ -22,7 +22,7 @@ class View {
                 </tr>
             </thead>
             <tbody>
-                ${registro.cargas.map((el,index) => `
+                ${registro.cargas.map((el, index) => `
 
                         <tr>
                             <th scope="row">${index + 1}.</th>

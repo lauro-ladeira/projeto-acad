@@ -1,20 +1,20 @@
 class RegistroController {
 
     constructor() {
-        const $ = document.querySelector.bind(document)
         
+        const $ = document.querySelector.bind(document)
+
         this._inputExercicio = $('#input-exercicio');
         this._inputSeries = $('#input-series');
         this._inputReps = $('#input-reps');
         this._inputCarga = $('#input-carga');
-        
+
         this._listaRegistros = new ListaRegistros();
         this._registrosView = new View($('#registros-view'));
         this._validacaoHelper = new validacaoHelper();
 
-       
     }
-    
+
     adiciona(event) {
 
         event.preventDefault();
@@ -40,14 +40,14 @@ class RegistroController {
 
         this._limpaFormulário();
     }
-    
+
     _criaRegistro() {
 
         const id = IdHelper.getId(this._listaRegistros.registros);
 
         return new Registro(
-            this._inputExercicio.value, 
-            this._inputSeries.value, 
+            this._inputExercicio.value,
+            this._inputSeries.value,
             this._inputReps.value,
             this._inputCarga.value,
             id

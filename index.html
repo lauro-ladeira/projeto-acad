@@ -1,75 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Projeto Gym Helper</title>
-    </head>
-    <body>
-        <h1>Gym Helper</h1>
-        <div class="container">
-            <form class="form-container">
-              <input type="text" class="form-control-sm" id="input-exercicio" placeholder="Exercício">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <title>Projeto Gym Helper</title>
+</head>
 
-              <input type="number" class="form-control-sm" id="input-series" placeholder="Séries">
+<body>
+    <h1>Gym Helper</h1>
+    <div class="container">
+        <form class="form-container">
+            <input type="text" class="form-control-sm" id="input-exercicio" placeholder="Exercício">
 
-              <input type="number" class="form-control-sm" id="input-reps" placeholder="Repetições">
+            <input type="number" class="form-control-sm" id="input-series" placeholder="Séries">
 
-              <input type="number" class="form-control-sm" id="input-carga" placeholder="Carga">
-              <div class="btn-add">
+            <input type="number" class="form-control-sm" id="input-reps" placeholder="Repetições">
+
+            <input type="number" class="form-control-sm" id="input-carga" placeholder="Carga">
+            <div class="btn-add">
                 <button onclick='novoRegistro.adiciona(event)' class="btn btn-primary btn-sm">Incluir</button>
-              </div>
-            </form>
+            </div>
+        </form>
 
-            <ul class="nav nav-tabs">
-              <li class="nav-item">
-                  <a class="nav-link" href="#"><div class="data-link">19<br>Seg</div></a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link active" href="#"><div class="data-link">20<br>Ter</div></a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#"><div class="data-link">21<br>Qua</div></a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#"><div class="data-link">22<br>Qui</div></a>
-              </li>
-              <li class="nav-item">
-                      <a class="nav-link" href="#"><div class="data-link">23<br>Sex</div></a>
-              </li>
-              <li class="nav-item">
-                      <a class="nav-link" href="#"><div class="data-link">24<br>Sáb</div></a>
-              </li>
-              <li class="nav-item">
-                      <a class="nav-link" href="#"><div class="data-link">25<br>Dom</div></a>
-              </li>
-            </ul>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <div class="data-link">19<br>Seg</div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">
+                    <div class="data-link">20<br>Ter</div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <div class="data-link">21<br>Qua</div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <div class="data-link">22<br>Qui</div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <div class="data-link">23<br>Sex</div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <div class="data-link">24<br>Sáb</div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <div class="data-link">25<br>Dom</div>
+                </a>
+            </li>
+        </ul>
+        <div id="registros-view"></div>
+    </div>
 
-            <div id="registros-view"></div>
-        </div>
+    <script src="js/app/helpers/validacaoHelper.js"></script>
+    <script src="js/app/models/Registro.js"></script>
+    <script src="js/app/controllers/RegistroController.js"></script>
+    <script src="js/app/models/ListaRegistros.js"></script>
+    <script src="js/app/views/View.js"></script>
+    <script src="js/app/helpers/IdHelper.js"></script>
 
-        <script src="js/app/helpers/validacaoHelper.js"></script>
-        <script src="js/app/models/Registro.js"></script>
-        <script src="js/app/controllers/RegistroController.js"></script>
-        <script src="js/app/models/ListaRegistros.js"></script>
-        <script src="js/app/views/View.js"></script>
-        <script src="js/app/helpers/IdHelper.js"></script>
-
-        <script>
-
+    <script>
         const novoRegistro = new RegistroController();
 
         document.addEventListener('keypress', function(event) {
-            if(event.keyCode === 13 || event.which === 13) {
+            if (event.keyCode === 13 || event.which === 13) {
                 novoRegistro.adiciona(event);
             }
         });
+    </script>
+</body>
 
-        </script>
-    </body>
 </html>
